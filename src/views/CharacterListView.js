@@ -2,12 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { CharacterList } from "../components";
-
 import { getData } from '../actions';
 import Loader from "react-loader-spinner";
 
-class CharacterListView extends React.Component {
-  
+class CharacterListView extends React.Component {  
 
   componentDidMount() {
     // call our action
@@ -21,6 +19,7 @@ class CharacterListView extends React.Component {
         <Loader type="TailSpin" color="#00BFFF" height="90" width="60" />
       )
     }
+    
     return (
       <div className="CharactersList_wrapper">
         <CharacterList characters={this.props.characters} />
