@@ -2,7 +2,7 @@ import { FETCH_DATA_FAILURE, FETCH_DATA_START, FETCH_DATA_SUCCESS } from "../act
 const initialState = {
   characters: [],
   fetching: false,
-  error: null
+  error: ""
   // Array characters, Boolean fetching, null error.
 };
 export const charsReducer = (state = initialState, action) => {
@@ -10,16 +10,16 @@ export const charsReducer = (state = initialState, action) => {
     case FETCH_DATA_START:
       return {
         ...state,
+        error: "",
         fetching: true
       };
-
     case FETCH_DATA_SUCCESS:
       return {
         ...state,
+        error: "",
         fetching: false,
         characters: action.payload
       }
-
     case FETCH_DATA_FAILURE:
       return {
         ...state,
